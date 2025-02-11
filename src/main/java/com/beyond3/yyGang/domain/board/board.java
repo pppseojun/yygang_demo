@@ -1,4 +1,4 @@
-package com.beyond3.yyGang.entity;
+package com.beyond3.yyGang.domain.board;
 
 
 import jakarta.persistence.*;
@@ -10,7 +10,6 @@ import java.time.LocalDateTime;
 
 @Entity
 @Getter
-@Setter
 @NoArgsConstructor
 @Table(name = "board")
 public class board {
@@ -18,7 +17,7 @@ public class board {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "board_id")
-    private Integer boardId;
+    private Long boardId;
 
     @Column(name = "user_id", nullable = false)
     private Integer userId;
@@ -35,8 +34,9 @@ public class board {
     @Column(name = "board_mdate")
     private LocalDateTime boardMdate;
 
-    @Column(name = "board_good")
-    private Integer boardGood;
+    // 게시판 좋아요 기능 보류
+    // @Column(name = "board_good")
+    // private Integer boardGood;
 
     @Column(name = "board_del", nullable = false, length = 1)
     private char boardDel;
