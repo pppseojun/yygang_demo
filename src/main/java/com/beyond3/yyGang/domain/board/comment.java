@@ -1,4 +1,4 @@
-package com.beyond3.yyGang.entity;
+package com.beyond3.yyGang.domain.board;
 
 import jakarta.persistence.*;
 import lombok.Getter;
