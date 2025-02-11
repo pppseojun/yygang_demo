@@ -36,7 +36,7 @@ public class question_board {
     @Column(name = "qboard_good")
     private Integer qboardGood;
 
-    @Enumerated(EnumType.STRING)
+
     @Column(name = "qboard_del", nullable = false, length = 1)
     private char qboardDel;
 
