@@ -2,9 +2,12 @@ package com.beyond3.yyGang.domain.board;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,10 +28,12 @@ public class answer_board {
     @Column(name = "user_id", nullable = false)
     private Integer userId;
 
-    @Column(name = "qboard_id", nullable = false)
-    private Integer qboardId;
 
-    @Column(name = "answer_board_contents", columnDefinition = "text", nullable = false)
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "qboard_id")
+    private question_board qboard;
+
+    @Column(columnDefinition = "text", nullable = false)
     private String answerBoradContents;
 
     @Column(name = "answer_board_date", nullable = false)
